@@ -1,162 +1,86 @@
----
-id: getting-started
-title: Getting Started
----
+import React from "react";
 
-Create React App is an officially supported way to create single-page React
-applications. It offers a modern build setup with no configuration.
-
-## Quick Start
-
-```sh
-npx create-react-app my-app
-cd my-app
-npm start
-```
-
-> If you've previously installed `create-react-app` globally via `npm install -g create-react-app`, we recommend you uninstall the package using `npm uninstall -g create-react-app` or `yarn global remove create-react-app` to ensure that `npx` always uses the latest version.
-
-_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
-
-Then open [http://localhost:3000/](http://localhost:3000/) to see your app.
-
-When you’re ready to deploy to production, create a minified bundle with `npm run build`.
-
-<p align='center'>
-<img src='https://cdn.jsdelivr.net/gh/facebook/create-react-app@27b42ac7efa018f2541153ab30d63180f5fa39e0/screencast.svg' width='600' alt='npm start' />
-</p>
-
-### Get Started Immediately
-
-You **don’t** need to install or configure tools like webpack or Babel. They are preconfigured and hidden so that you can focus on the code.
-
-Create a project, and you’re good to go.
-
-## Creating an App
-
-**You’ll need to have Node >= 14 on your local development machine** (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to switch Node versions between different projects.
-
-To create a new app, you may choose one of the following methods:
-
-### npx
-
-```sh
-npx create-react-app@latest my-app
-```
-
-_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
-
-### npm
-
-```sh
-npm init react-app my-app
-```
-
-_`npm init <initializer>` is available in npm 6+_
-
-### Yarn
-
-```sh
-yarn create react-app my-app
-```
-
-_`yarn create` is available in Yarn 0.25+_
-
-### Selecting a template
-
-You can now optionally start a new app from a template by appending `--template [template-name]` to the creation command.
-
-If you don't select a template, we'll create your project with our base template.
-
-Templates are always named in the format `cra-template-[template-name]`, however you only need to provide the `[template-name]` to the creation command.
-
-```sh
-npx create-react-app my-app --template [template-name]
-```
-
-> You can find a list of available templates by searching for ["cra-template-\*"](https://www.npmjs.com/search?q=cra-template-*) on npm.
-
-Our [Custom Templates](custom-templates.md) documentation describes how you can build your own template.
-
-#### Creating a TypeScript app
-
-You can start a new TypeScript app using templates. To use our provided TypeScript template, append `--template typescript` to the creation command.
-
-```sh
-npx create-react-app my-app --template typescript
-```
-
-If you already have a project and would like to add TypeScript, see our [Adding TypeScript](adding-typescript.md) documentation.
-
-### Selecting a package manager
-
-When you create a new app, the CLI will use [npm](https://docs.npmjs.com) or [Yarn](https://yarnpkg.com/) to install dependencies, depending on which tool you use to run `create-react-app`. For example:
-
-```sh
-# Run this to use npm
-npx create-react-app my-app
-# Or run this to use yarn
-yarn create react-app my-app
-```
-
-## Output
-
-Running any of these commands will create a directory called `my-app` inside the current folder. Inside that directory, it will generate the initial project structure and install the transitive dependencies:
-
-```
-my-app
-├── README.md
-├── node_modules
-├── package.json
-├── .gitignore
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   └── robots.txt
-└── src
-    ├── App.css
-    ├── App.js
-    ├── App.test.js
-    ├── index.css
-    ├── index.js
-    ├── logo.svg
-    ├── serviceWorker.js
-    └── setupTests.js
-```
-
-No configuration or complicated folder structures, only the files you need to build your app. Once the installation is done, you can open your project folder:
-
-```sh
-cd my-app
-```
-
-## Scripts
-
-Inside the newly created project, you can run some built-in commands:
-
-### `npm start` or `yarn start`
-
-Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will automatically reload if you make changes to the code. You will see the build errors and lint warnings in the console.
-
-<p align='center'>
-<img src='https://cdn.jsdelivr.net/gh/marionebl/create-react-app@9f6282671c54f0874afd37a72f6689727b562498/screencast-error.svg' width='600' alt='Build errors' />
-</p>
-
-### `npm test` or `yarn test`
-
-Runs the test watcher in an interactive mode. By default, runs tests related to files changed since the last commit.
-
-[Read more about testing](running-tests.md).
-
-### `npm run build` or `yarn build`
-
-Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.
-
-Your app is ready to be deployed.
+export default function OrakelMindmap() {
+  return (
+    <div className="p-8 w-full max-w-4xl mx-auto">
+      <div className="text-center mb-6">
+        <h1 className="text-4xl font-bold">Orakel</h1>
+        <h2 className="text-2xl font-semibold">Thomas Olde Heuvelt</h2>
+        <img src="/images/orakel_cover.jpg" alt="Boekcover Orakel" className="mx-auto my-4 w-48" />
+      </div>
+      
+      <div className="grid grid-cols-2 gap-6">
+        <div className="p-4 border-l-4 border-orange-500 bg-orange-100 rounded">
+          <h2 className="text-xl font-semibold">Plot</h2>
+          <img src="/images/plot_icon.png" alt="Plot" className="w-12 mb-2" />
+          <ul className="list-disc ml-5">
+            <li>Emma en Luca vinden het mysterieuze schip.</li>
+            <li>Emma verdwijnt nadat ze aan boord gaat.</li>
+            <li>Onderzoek door geheime dienst November-6.</li>
+            <li>Het schip blijkt een gevaarlijk fenomeen te zijn.</li>
+          </ul>
+        </div>
+        
+        <div className="p-4 border-l-4 border-green-500 bg-green-100 rounded">
+          <h2 className="text-xl font-semibold">Personages</h2>
+          <img src="/images/characters_icon.png" alt="Personages" className="w-12 mb-2" />
+          <ul className="list-disc ml-5">
+            <li><strong>Luca Wolf</strong> - 13-jarige jongen, hoofdpersonage.</li>
+            <li><strong>Emma Reich</strong> - Luca's vriendin, verdwijnt in het schip.</li>
+            <li><strong>Grim</strong> - Onderzoeker, belangrijke rol in het mysterie.</li>
+            <li><strong>November-6</strong> - Geheime dienst die de zaak onderzoekt.</li>
+          </ul>
+        </div>
+        
+        <div className="p-4 border-l-4 border-purple-500 bg-purple-100 rounded">
+          <h2 className="text-xl font-semibold">Perspectief</h2>
+          <img src="/images/perspective_icon.png" alt="Perspectief" className="w-12 mb-2" />
+          <p>Wisselend perspectief tussen Luca en Grim, alwetende verteller.</p>
+        </div>
+        
+        <div className="p-4 border-l-4 border-blue-500 bg-blue-100 rounded">
+          <h2 className="text-xl font-semibold">Tijd</h2>
+          <img src="/images/time_icon.png" alt="Tijd" className="w-12 mb-2" />
+          <p>Speelt zich af in het heden met flashbacks naar de geschiedenis van het schip.</p>
+        </div>
+        
+        <div className="p-4 border-l-4 border-yellow-500 bg-yellow-100 rounded">
+          <h2 className="text-xl font-semibold">Ruimte</h2>
+          <img src="/images/space_icon.png" alt="Ruimte" className="w-12 mb-2" />
+          <ul className="list-disc ml-5">
+            <li>Kustdorp</li>
+            <li>Bollenvelden</li>
+            <li>Het mysterieuze schip</li>
+          </ul>
+        </div>
+        
+        <div className="p-4 border-l-4 border-red-500 bg-red-100 rounded">
+          <h2 className="text-xl font-semibold">Symbolen</h2>
+          <img src="/images/symbols_icon.png" alt="Symbolen" className="w-12 mb-2" />
+          <ul className="list-disc ml-5">
+            <li><strong>Het schip</strong> - symbool voor het onbekende en gevaar.</li>
+            <li><strong>De mist</strong> - symbool voor onzekerheid en geheimen.</li>
+            <li><strong>De scheepsbel</strong> - symbool voor het lot.</li>
+          </ul>
+        </div>
+        
+        <div className="p-4 border-l-4 border-pink-500 bg-pink-100 rounded">
+          <h2 className="text-xl font-semibold">Motieven</h2>
+          <img src="/images/motifs_icon.png" alt="Motieven" className="w-12 mb-2" />
+          <ul className="list-disc ml-5">
+            <li>Verdwijningen</li>
+            <li>Het bovennatuurlijke</li>
+            <li>Geheimhouding en complotten</li>
+            <li>De strijd tussen weten en niet-weten</li>
+          </ul>
+        </div>
+        
+        <div className="p-4 border-l-4 border-gray-500 bg-gray-100 rounded">
+          <h2 className="text-xl font-semibold">Thema</h2>
+          <img src="/images/theme_icon.png" alt="Thema" className="w-12 mb-2" />
+          <p>De gevolgen van nieuwsgierigheid, de invloed van het verleden op het heden, goed versus kwaad.</p>
+        </div>
+      </div>
+    </div>
+  );
+}
